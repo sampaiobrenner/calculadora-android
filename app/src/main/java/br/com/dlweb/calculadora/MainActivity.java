@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         btnMultiplicacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvOperacao.setText(tvOperacao.getText().toString().concat(" * "));
+                tvOperacao.setText(tvOperacao.getText().toString().concat(" X "));
             }
         });
 
