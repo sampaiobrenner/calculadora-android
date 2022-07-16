@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import br.com.dlweb.calculadora.database.DatabaseHelper;
 import expr.Expr;
 import expr.Parser;
 import expr.SyntaxException;
@@ -193,8 +194,13 @@ public class CalculadoraFragment extends Fragment {
                     String operacao = tvOperacao.getText().toString();
                     operacao = operacao.replace(",", ".");
                     Expr expr = Parser.parse(operacao);
-                    double resultado = expr.value();
-                    tvResultado.setText(String.valueOf(resultado).replace(".", ","));
+                    String resultado = String.valueOf(expr.value()).replace(".", ",");
+                    tvResultado.setText(resultado);
+
+                    // Armazena resultado no histórico
+                    DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
+                    databaseHelper.createHistorico(operacao.concat(" = ").concat(resultado));
+
                 } catch (SyntaxException e) {
                     e.printStackTrace();
                 }

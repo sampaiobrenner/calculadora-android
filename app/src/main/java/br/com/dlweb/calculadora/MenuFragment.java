@@ -40,7 +40,7 @@ public class MenuFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new CalculadoraFragment()).commit();
                 break;
             case R.id.menu_historico:
-                //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new br.com.matheussbrenner.cadastroprodutos.categorias.MainFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new HistoricoFragment()).commit();
                 break;
         }
         return super.onOptionsItemSelected(item);
