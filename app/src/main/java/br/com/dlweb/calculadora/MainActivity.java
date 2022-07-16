@@ -184,12 +184,6 @@ public class MainActivity extends AppCompatActivity {
                     Expr expr = Parser.parse(operacao);
                     double resultado = expr.value();
                     tvResultado.setText(String.valueOf(resultado).replace(".", ","));
-
-                    //tvResultado.setText(tvOperacao.getText().toString()
-                    //        .concat(" = ").concat(String.valueOf(resultado)
-                    //                .replace(".", ",")));
-
-                    //tvOperacao.setText("");
                 } catch (SyntaxException e) {
                     e.printStackTrace();
                 }
