@@ -183,10 +183,13 @@ public class MainActivity extends AppCompatActivity {
                     operacao = operacao.replace(",", ".");
                     Expr expr = Parser.parse(operacao);
                     double resultado = expr.value();
-                    tvResultado.setText(tvOperacao.getText().toString()
-                            .concat(" = ").concat(String.valueOf(resultado)
-                                    .replace(".", ",")));
-                    tvOperacao.setText("");
+                    tvResultado.setText(String.valueOf(resultado).replace(".", ","));
+
+                    //tvResultado.setText(tvOperacao.getText().toString()
+                    //        .concat(" = ").concat(String.valueOf(resultado)
+                    //                .replace(".", ",")));
+
+                    //tvOperacao.setText("");
                 } catch (SyntaxException e) {
                     e.printStackTrace();
                 }
